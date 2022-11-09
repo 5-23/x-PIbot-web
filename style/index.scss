@@ -1,0 +1,179 @@
+*{
+    margin: 0;
+}
+
+
+
+header{
+    $headerMG: 50px;
+    display: flex;
+    position: fixed;
+    background-color: #fff;
+    z-index: 100;
+    
+    
+    padding-left: $headerMG;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    height: 40px;
+    align-items: center;
+    box-shadow: black -1px 1px 5px;
+    
+    > nav{
+        display: flex;
+        margin-left: 50px;
+        align-items: center;
+        gap: $headerMG;
+
+        a{
+            color: #000;
+            text-decoration: none;
+            
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+    > img{
+        height: 30px;
+    }
+}
+
+$mianTitle: 50px;
+$mianBold: 70px;
+
+main{
+    #intro{
+        background-color: #ECB37A;
+        height: 450px;
+        background-image: url("/imgs/pieBot.png");
+        background-repeat: no-repeat;
+        background-size: 370px;
+        background-position-x: -400px;
+        background-position-y: 100%;
+        transition: all 1s;
+        transition-delay: .5s;
+
+
+        > section{
+            float: right;
+            padding-top: 200px;
+            padding-right: 200px;
+            font-size: $mianTitle;
+            font-weight: 800;
+            color: #fff;
+
+            transition: all 1s;
+            transition-delay: 1s;
+            opacity: 0;
+            transform: translateX(50px);
+
+            > b{
+                font-size: $mianBold;
+                font-weight: 900;
+                &:nth-child(1){ color: #000; }
+                &:nth-child(2){ color: #E3732F; }
+            }
+            > #btns{
+                display: grid;
+                align-items: center;
+                justify-items: center;
+                width: 100%;
+                margin: 0 auto;
+                > #btn{
+
+                    > a{
+                        font-size: 20px;
+                        background-color: #fff;
+                        padding: 10px 50px 10px 50px;
+                        border-radius: 50px;
+                        text-decoration: none;
+                        &:nth-child(1){ background-color: #E3732F; color: #fff; }
+                        &:nth-child(2){ background-color: #FFF; color: #000; }
+                    }
+                }
+            }
+        }
+    }
+    #down{
+        padding-top: 20vw;
+        display: grid;
+        justify-items: center;
+        // text-align: center;
+        font-size: 50px;
+        width: 100%;
+        margin-bottom: 400px;
+
+        animation-name: down;
+        animation-iteration-count: infinite;
+        animation-duration: 1s;
+
+    }
+
+    iframe{
+        transform: translateX(50px) perspective(1000px) rotateX(-0.76deg) rotateY(-14.91deg) scale3d(1, 1, 1); 
+        // will-change: transform;
+        float: right;
+        margin-right: 50px;
+        box-shadow: rgb(107, 107, 107) 1px 1px 20px;
+        transition: all 1s;
+        // transform: translateX(50px);
+        opacity: 0;
+        
+        &::after{
+            content: 'aaaaaaaaaaaaaaaaaaa';
+            display: block;
+            position: relative;
+            width: 1000px;
+            height: 200px;
+            background-color: #E3732F;
+        }
+    }
+}
+
+@keyframes down {
+    0%, 100%{
+        transform: translateY(0);
+        opacity: .7;
+    }
+    50%{
+        transform: translateY(10px);
+        opacity: 1;
+    }
+}
+
+
+@media screen and (max-width:1540px) {
+    main #intro{
+        background-size: 200px;
+        > section{
+            float: none;
+            padding-top: 200px;
+            padding-bottom: 200px;
+            padding-left: 20px;
+            padding-right: 0;
+            margin: 0 auto;
+
+            font-size: $mianTitle - 30;
+
+            > b{
+                font-size: $mianBold - 40;
+                font-weight: 700;
+            }
+
+            > #btns > #btn > a{
+                font-size: 10px;
+                background-color: #fff;
+                padding: 10px 20px 10px 20px;
+                border-radius: 50px;
+                text-decoration: none;
+            }
+            
+        }
+    }
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
