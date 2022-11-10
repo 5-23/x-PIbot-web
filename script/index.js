@@ -1,3 +1,5 @@
+window.scrollTo({left: 0})
+
 let observer = new IntersectionObserver((e)=>{
     e.forEach(box=>{
         if (box.isIntersecting){
